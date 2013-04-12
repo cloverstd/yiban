@@ -11,7 +11,7 @@ Python_SDK4yiban 是对易班 API 接口进行的一个简单封装，主要包�
 
 ##安装##
 ```
-git clone 
+git://github.com/cloverstd/yiban.git
 ```
 
 ##使用说明##
@@ -36,7 +36,43 @@ token = get_access_token(code)
 
 所有返回数据以易班官方文档为准
 
+```
+from yiban import API
+```
+
 ###用户 users###
 ```
-当前用户 API.user.me(access_token)
+当前用户信息 API.user.me(access_token)
+当前用户真实信息 API.user.real_me(access_token)
+指定用户信息 API.user.get_show(access_token, uid)
+指定用户的好友数，粉丝数，微博数 API.user.get_counts(access_token, uid)
+```
+
+###动态 statuses###
+```
+最新公共微博 API.statuses.get_public(access_token, counts)
+单条微博 API.statuses.get_show(access_token, id)
+某一话题下的微博 API.statuses.get_topics(access_token, topic, count, cursor)
+发微博 API.statuses.update(access_token, status, weiboid, pic, video)
+上传照片 API.statuses.upload(access_token, status, pic)
+```
+
+###关系 friendship###
+```
+指定用户好友列表 API.friendship.get_friend(access_token, uid, count, cursor)
+指定用户关注列表 API.friendship.get_follow(access_token, uid, count, cursor)
+当前用户和指定用户的共同好友 API.friendship.get_friend_in_common(access_token, fid, count, cursor)
+当前用户和指定用户的共同关注 API.friendship.get_follow_in_common(access_token, fid, count, cursor)
+```
+
+###注册 register###
+```
+检查昵称是否允许 API.register.verify_nickname(access_token, nickname)
+所有学校信息 API.site_info(access_token)
+```
+
+###消息 notification###
+```
+发送站内信 API.notification.send_site_mail(access_token, uid, content)  # 高级接口
+发送系统消息 API.notification.send_sys_message(access_token, content, uid) # 高级接口
 ```
