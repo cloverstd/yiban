@@ -77,6 +77,6 @@ from yiban import API
 发送系统消息 API.notification.send_sys_message(access_token, content, uid) # 高级接口
 ```
 
-Changelog
+##Changelog##
 
 v0.0.1 [2013-04-11]
