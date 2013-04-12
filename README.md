@@ -61,8 +61,8 @@ from yiban import API
 ```
 指定用户好友列表 API.friendship.get_friend(access_token, uid, count, cursor)
 指定用户关注列表 API.friendship.get_follow(access_token, uid, count, cursor)
-当前用户和指定用户的共同好友 API.friendship.get_friend_in_common(access_token, fid, count, cursor)
-当前用户和指定用户的共同关注 API.friendship.get_follow_in_common(access_token, fid, count, cursor)
+当前用户和指定用户的共同好友 API.friendship.get_friend_in_common(access_token, fid, count, cursor) # 错误发生，40003
+当前用户和指定用户的共同关注 API.friendship.get_follow_in_common(access_token, fid, count, cursor) # 错误发生，40003
 ```
 
 ###注册 register###
@@ -76,3 +76,7 @@ from yiban import API
 发送站内信 API.notification.send_site_mail(access_token, uid, content)  # 高级接口
 发送系统消息 API.notification.send_sys_message(access_token, content, uid) # 高级接口
 ```
+
+Changelog
+
+v0.0.1 [2013-04-11]
